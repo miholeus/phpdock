@@ -13,3 +13,18 @@
 
 These Docker images are built on top of the official PHP Docker image, they contain additional PHP extensions required to run PHP applications.
 Under `docker` folder you may find services that may be enabled for your application.
+
+
+## Features
+
+- Switch between PHP versions: 7.0, 7.1
+- Switch database engine: MySQL, Postgres
+- Choose NoSQL database: Memcached, Redis, MongoDB
+- Easy to install/remove software
+
+## Installable software
+
+- Database engines: MySQL, Postgres
+- NoSQL databases: Memcached, Reids, MongoDB
+- PHP compilers: PHP-FPM
+- Message Queueing: RabbitMQ
