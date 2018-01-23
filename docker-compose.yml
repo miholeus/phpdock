@@ -19,13 +19,28 @@ services:
                 - INSTALL_AMQP=${APP_INSTALL_AMQP}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
-            - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+            - ./docker/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+            - ./docker/php-fpm/${AEROSPIKE_INI_FILE}:/usr/local/etc/php/conf.d/aerospike.ini
         expose:
             - "9000"
         extra_hosts:
             - "dockerhost:${DOCKER_HOST_IP}"
         networks:
             - backend
+
+### Aerospike c Container ###################################
+
+    aerospike:
+      build: ./docker/aerospike
+      volumes:
+        - ${DATA_SAVE_PATH}/aerospike:/opt/aerospike/data
+      ports:
+        - "${AEROSPIKE_SERVICE_PORT}:3000"
+        - "${AEROSPIKE_FABRIC_PORT}:3001"
+        - "${AEROSPIKE_HEARTBEAT_PORT}:3002"
+        - "${AEROSPIKE_INFO_PORT}:3003"
+      networks:
+        - backend
 
 ### Networks Setup ############################################
 
