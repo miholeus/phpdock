@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+### Applications Code Container #############################
+
+    applications:
+      image: tianon/true
+
+### PHP-FPM Container #######################################
+
+    php-fpm:
+        build:
+            context: ./docker/php-fpm
+            args:
+                - INSTALL_PGSQL=${APP_INSTALL_PGSQL}
+                - INSTALL_PG_CLIENT=${APP_INSTALL_PG_CLIENT}
+                - INSTALL_MSSQL=${APP_INSTALL_MSSQL}
+                - INSTALL_MYSQLI=${APP_INSTALL_MYSQLI}
+                - INSTALL_MEMCACHED=${APP_INSTALL_MEMCACHED}
+                - INSTALL_PHPREDIS=${APP_INSTALL_PHPREDIS}
+                - INSTALL_MONGO=${APP_INSTALL_MONGO}
+                - INSTALL_AEROSPIKE=${APP_INSTALL_AEROSPIKE}
+                - INSTALL_AMQP=${APP_INSTALL_AMQP}
+            dockerfile: "Dockerfile-${PHP_VERSION}"
+        volumes_from:
+            - applications
+        volumes:
+            - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
+        expose:
+            - "9000"
+        extra_hosts:
+            - "dockerhost:${DOCKER_HOST_IP}"
+        networks:
+            - backend
+
+### Networks Setup ############################################
+
+networks:
+  backend:
+    driver: "bridge"
