@@ -2,11 +2,6 @@ version: '3'
 
 services:
 
-### Applications Code Container #############################
-
-    applications:
-      image: tianon/true
-
 ### PHP-FPM Container #######################################
 
     php-fpm:
@@ -23,8 +18,6 @@ services:
                 - INSTALL_AEROSPIKE=${APP_INSTALL_AEROSPIKE}
                 - INSTALL_AMQP=${APP_INSTALL_AMQP}
             dockerfile: "Dockerfile-${PHP_VERSION}"
-        volumes_from:
-            - applications
         volumes:
             - ./php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
         expose:
