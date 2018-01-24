@@ -17,6 +17,8 @@ services:
                 - INSTALL_MONGO=${APP_INSTALL_MONGO}
                 - INSTALL_AEROSPIKE=${APP_INSTALL_AEROSPIKE}
                 - INSTALL_AMQP=${APP_INSTALL_AMQP}
+                - INSTALL_ZIP_ARCHIVE=${APP_INSTALL_ZIP_ARCHIVE}
+                - INSTALL_SOAP=${APP_INSTALL_SOAP}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./docker/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
