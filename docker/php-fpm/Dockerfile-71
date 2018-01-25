@@ -155,6 +155,19 @@ RUN if [ ${INSTALL_AEROSPIKE} = true ]; then \
 ;fi
 
 #####################################
+# AMQP:
+#####################################
+
+ARG INSTALL_AMQP=false
+RUN if [ ${INSTALL_AMQP} = true ]; then \
+    apt-get update && \
+    apt-get install librabbitmq-dev -y && \
+    # Install the amqp extension
+    pecl install amqp && \
+    docker-php-ext-enable amqp \
+;fi
+
+#####################################
 # ZipArchive:
 #####################################
 
@@ -199,18 +212,14 @@ RUN if [ ${INSTALL_GMP} = true ]; then \
 ;fi
 
 #####################################
-# AMQP:
+# Exif:
 #####################################
 
-ARG INSTALL_AMQP=false
-RUN if [ ${INSTALL_AMQP} = true ]; then \
-    apt-get update && \
-    apt-get install librabbitmq-dev -y && \
-    # Install the amqp extension
-    pecl install amqp && \
-    docker-php-ext-enable amqp \
+ARG INSTALL_EXIF=false
+RUN if [ ${INSTALL_EXIF} = true ]; then \
+    # Enable Exif PHP extentions requirements
+    docker-php-ext-install exif \
 ;fi
-
 
 #####################################
 # PHP settings
