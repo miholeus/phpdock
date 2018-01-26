@@ -22,6 +22,7 @@ services:
                 - INSTALL_BCMATH=${APP_INSTALL_BCMATH}
                 - INSTALL_GMP=${APP_INSTALL_GMP}
                 - INSTALL_EXIF=${APP_INSTALL_EXIF}
+                - INSTALL_XDEBUG=${APP_INSTALL_XDEBUG}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./docker/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
