@@ -6,6 +6,8 @@
     <br>
 </p>
 
+[![Build Status](https://travis-ci.org/miholeus/phpdock.svg?branch=master)](https://travis-ci.org/miholeus/phpdock)
+
 > ### Status
 > This is still work in progress. The images available on docker hub are in **public preview** state.
 
