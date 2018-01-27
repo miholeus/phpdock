@@ -27,6 +27,7 @@ services:
         volumes:
             - ./docker/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
             - ./docker/php-fpm/${AEROSPIKE_INI_FILE}:/usr/local/etc/php/conf.d/aerospike.ini
+            - ./docker/php-fpm/${XDEBUG_INI_FILE}:/usr/local/etc/php/conf.d/xdebug.ini
         expose:
             - "9000"
         extra_hosts:
