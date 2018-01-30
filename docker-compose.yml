@@ -23,11 +23,13 @@ services:
                 - INSTALL_GMP=${APP_INSTALL_GMP}
                 - INSTALL_EXIF=${APP_INSTALL_EXIF}
                 - INSTALL_XDEBUG=${APP_INSTALL_XDEBUG}
+                - INSTALL_OPCACHE=${APP_INSTALL_OPCACHE}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./docker/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
             - ./docker/php-fpm/${AEROSPIKE_INI_FILE}:/usr/local/etc/php/conf.d/aerospike.ini
             - ./docker/php-fpm/${XDEBUG_INI_FILE}:/usr/local/etc/php/conf.d/xdebug.ini
+            - ./docker/php-fpm/${OPCACHE_INI_FILE}:/usr/local/etc/php/conf.d/opcache.ini
         expose:
             - "9000"
         extra_hosts:
