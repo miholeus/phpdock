@@ -24,6 +24,7 @@ services:
                 - INSTALL_EXIF=${APP_INSTALL_EXIF}
                 - INSTALL_XDEBUG=${APP_INSTALL_XDEBUG}
                 - INSTALL_OPCACHE=${APP_INSTALL_OPCACHE}
+                - INSTALL_BLACKFIRE=${APP_INSTALL_BLACKFIRE}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./docker/php-fpm/php${PHP_VERSION}.ini:/usr/local/etc/php/php.ini
