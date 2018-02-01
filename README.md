@@ -30,3 +30,11 @@ Under `docker` folder you may find services that may be enabled for your applica
 - NoSQL databases: Memcached, Reids, MongoDB
 - PHP compilers: PHP-FPM
 - Message Queueing: RabbitMQ
+
+## Available PHP extensions
+
+- Databases: pgsql, sqlsrv, pdo_sqlsrv, mysqli
+- NoSQL: Memcached, Redis, MongoDB, Aerospike
+- Message Queueing: amqp
+- Cache & debugging: xdebug, opcache, blackfire
+- Other extensions: zip, soap, bcmath, gmp, exif
