@@ -26,6 +26,7 @@ services:
                 - INSTALL_OPCACHE=${APP_INSTALL_OPCACHE}
                 - INSTALL_BLACKFIRE=${APP_INSTALL_BLACKFIRE}
                 - INSTALL_TOKENIZER=${APP_INSTALL_TOKENIZER}
+                - INSTALL_INTL=${APP_INSTALL_INTL}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./:/app
