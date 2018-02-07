@@ -28,6 +28,7 @@ services:
                 - INSTALL_TOKENIZER=${APP_INSTALL_TOKENIZER}
                 - INSTALL_INTL=${APP_INSTALL_INTL}
                 - INSTALL_GHOSTSCRIPT=${APP_INSTALL_GHOSTSCRIPT}
+                - INSTALL_LDAP=${APP_INSTALL_LDAP}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./:/app
