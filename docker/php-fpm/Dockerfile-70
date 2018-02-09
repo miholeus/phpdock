@@ -315,6 +315,19 @@ RUN if [ ${INSTALL_IMAGE_OPTIMIZERS} = true ]; then \
 ;fi
 
 #####################################
+# ImageMagick:
+#####################################
+USER root
+ARG INSTALL_IMAGEMAGICK=false
+ENV INSTALL_IMAGEMAGICK ${INSTALL_IMAGEMAGICK}
+RUN if [ ${INSTALL_IMAGEMAGICK} = true ]; then \
+    apt-get update -y && \
+    apt-get install -y libmagickwand-dev imagemagick && \
+    pecl install imagick && \
+    docker-php-ext-enable imagick \
+;fi
+
+#####################################
 # PHP settings
 #####################################
 
