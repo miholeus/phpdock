@@ -30,6 +30,7 @@ services:
                 - INSTALL_GHOSTSCRIPT=${APP_INSTALL_GHOSTSCRIPT}
                 - INSTALL_LDAP=${APP_INSTALL_LDAP}
                 - INSTALL_IMAGE_OPTIMIZERS=${APP_INSTALL_IMAGE_OPTIMIZERS}
+                - INSTALL_IMAGEMAGICK=${APP_INSTALL_IMAGEMAGICK}
             dockerfile: "Dockerfile-${PHP_VERSION}"
         volumes:
             - ./:/app
