@@ -37,4 +37,5 @@ Under `docker` folder you may find services that may be enabled for your applica
 - NoSQL: Memcached, Redis, MongoDB, Aerospike
 - Message Queueing: amqp
 - Cache & debugging: xdebug, opcache, blackfire
-- Other extensions: zip, soap, bcmath, gmp, exif
+- Other extensions: zip, soap, bcmath, gmp, exif, tokenizer, intl, ghostscript, ldap, imagick, swoole
+- Image optimizers: jpegoptim, optipng, pngquant, gifsicle
