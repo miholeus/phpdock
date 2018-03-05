@@ -27,9 +27,10 @@ Under `docker` folder you may find services that may be enabled for your applica
 ## Installable software
 
 - Database engines: MySQL (MariaDB), Postgres
+- Neo4J support
 - NoSQL databases: Memcached, Redis, MongoDB, Aerospike, RethinkDB
 - PHP compilers: PHP-FPM
-- Message Queueing: RabbitMQ
+- Message Queueing: RabbitMQ, Beanstalkd
 - Nginx, Apache2
 
 ## Available PHP extensions
