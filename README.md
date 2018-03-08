@@ -32,6 +32,7 @@ Under `docker` folder you may find services that may be enabled for your applica
 - PHP compilers: PHP-FPM
 - Message Queueing: RabbitMQ, Beanstalkd
 - Nginx, Apache2
+- Varnish, Solr, Elasticsearch
 
 ## Available PHP extensions
 
